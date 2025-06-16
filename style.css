@@ -28,6 +28,9 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Cabeçalho */
@@ -39,16 +42,13 @@ header {
 
 header .container {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
     background-color: var(--color4);
     padding: 20px 40px;
 }
 
-header h1 {
-    color: var(--color1);
-}
-
+/* Logo */
 .logo {
     width: 120px;
     height: auto;
@@ -62,6 +62,7 @@ nav ul {
     justify-content: center;
     margin-top: 15px;
     flex-wrap: wrap;
+    padding: 0;
 }
 
 nav ul li {
@@ -91,6 +92,7 @@ nav ul li a {
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
 }
 
 .intro-imagem {
@@ -122,52 +124,7 @@ nav ul li a {
     background-color: var(--color2);
 }
 
-/* Serviços */
-.servicos {
-    background-color: #ffffff;
-    padding: 60px 20px;
-}
-
-.servicos .container {
-    max-width: 960px;
-    margin: 0 auto;
-}
-
-.servicos h2 {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.servico {
-    background-color: var(--color5);
-    border: 1px solid var(--color3);
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 30px;
-}
-
-.servico h3 {
-    font-size: 1.4em;
-    color: #551c3b;
-    margin-bottom: 10px;
-}
-
-.servico p {
-    font-size: 1em;
-    color: #333;
-    line-height: 1.5;
-}
-
-/* Variação Infantil */
-.servicos.infantil {
-    background-color: #fcecec;
-}
-
-.servicos.infantil .servico h3 {
-    color: #8a3b57;
-}
-
-/* Sobre */
+/* Sobre e Contato */
 .sobre,
 .contato {
     padding: 60px 0;
@@ -175,31 +132,8 @@ nav ul li a {
 }
 
 .sobre .container {
-    gap: 40px;
-    text-align: left;
-    flex-wrap: wrap;
+    text-align: center;
     justify-content: center;
-}
-
-.sobre-imagem {
-    flex-shrink: 0;
-    max-width: 300px; /* Ajuste este valor para diminuir ou aumentar */
-    width: 100%;
-    display: flex; /* Adicionado para usar flexbox para centralização */
-    justify-content: center; /* Centraliza horizontalmente o conteúdo da imagem */
-    align-items: center; /* Centraliza verticalmente o conteúdo da i
-    magem (se necessário) */
-    max-width: 20px;
-}
-
-.sobre-imagem img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    object-fit: cover; 
-    /* Garante que a imagem cubra o espaço mantendo a proporção */
-    max-width: 100px;
 }
 
 .sobre-texto {
@@ -207,17 +141,26 @@ nav ul li a {
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    flex-grow: 1;
-    width: 1200px;
     display: flex;
     align-items: center;
-    
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    text-align: left;
 }
 
-.sobre-texto img{
-  width: 300px;
-  height: 300px;
-  align-items: center;
+.sobre-texto > div {
+    flex: 1;
+    min-width: 300px;
+    text-align: justify;
+}
+
+.sobre-texto img {
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
 }
 
 .sobre-texto h2 {
@@ -231,12 +174,6 @@ nav ul li a {
     font-size: 1.1em;
     line-height: 1.8;
     color: var(--color2);
-    text-align: left;
-    text-align: justify;
-}
-
-.sobre-texto div{
-  margin: 1rem;
 }
 
 /* Rodapé */
@@ -247,112 +184,286 @@ footer {
     padding: 30px 0;
 }
 
-/* Responsividade */
-/* Botão de menu hambúrguer */
-.menu-toggle {
-  display: none;
-  font-size: 2rem;
-  background: none;
-  border: none;
-  color: var(--color1);
-  cursor: pointer;
-}
-
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-
-  nav {
-    width: 100%;
-  }
-
-  nav ul {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    background-color: var(--color4);
-    padding: 10px 0;
-  }
-
-  nav ul.show {
-    display: flex;
-  }
-
-  nav ul li {
-    margin: 10px 0;
-  }
-}
-
-
-header .container {
-        flex-direction: column;
-        align-items: center;
-        padding: 20px;
- }
-
-.sobre .container{
-        flex-direction: column;
-        text-align: center;
-}
-   .sobre-imagem {
-    flex-shrink: 0;
-    max-width: 10px; /* Este é o valor que você vai alterar */
-    width: 100%;
+.redes-sociais {
+    margin-top: 10px;
     display: flex;
     justify-content: center;
-    align-items: center;
-}
-
-    .sobre-texto {
-        padding: 20px;
-}
- .img-psicologa-atendendo {
-        display: flex;
-}
-
-    .logo {
-        width: 150px;
-        flex-wrap: nowrap;
-    }
-
-.sobre-caixa {
-        display: flex;
-        gap: 40px;
-        background-color: var(--color4);
-        padding: 30px;
-        border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        flex-wrap: wrap;
-        max-width: 10px;
-}
-
-.sobre-caixa .sobre-imagem img {
-        border-radius: 10px;
-        box-shadow: none;
-        max-width: 10px;
-}
-
-    .img-Psicóloga-atendendo{
-      max-width: 20px;
-}
-
-.redes-sociais {
-  margin-top: 1px;
-  display: flex;
-  justify-content: center;
+    gap: 15px;
 }
 
 .social-icon {
     width: 30px;
-  transition: transform 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
-/*
-.social-icon:hover {
-  transform: scale(0.9);
-  width: 1px;
-}*/
+/* Responsividade */
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: var(--color1);
+    cursor: pointer;
+}
 
-/* Botão de menu hambúrguer */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--color4);
+        padding: 10px 0;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .sobre-texto {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .sobre-texto > div {
+        text-align: justify;
+    }
+
+    .atendimento-cards .container {
+        grid-template-columns: 1fr;
+    }
+
+    .atendimento-cards .card {
+        width: 90%;
+        height: 380px;
+    }
+}
+
+/* --- Cards Animados Atendimento --- */
+.atendimento-cards {
+    background-color: #ffffff;
+    padding: 60px 20px;
+}
+
+.atendimento-cards h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-align: center;
+    color: var(--color1);
+}
+
+.atendimento-cards h2 {
+    font-size: 1.8em;
+    margin-bottom: 40px;
+    color: var(--color2);
+    text-align: center;
+}
+
+.atendimento-cards .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.atendimento-cards .card:nth-child(1),
+.atendimento-cards .card:nth-child(2) {
+    grid-column: span 1;
+    justify-self: center;
+}
+
+.atendimento-cards .card:nth-child(3),
+.atendimento-cards .card:nth-child(4),
+.atendimento-cards .card:nth-child(5) {
+    grid-column: span 1;
+    justify-self: center;
+}
+
+.atendimento-cards .card {
+    position: relative;
+    width: 280px;
+    height: 360px;
+    perspective: 1000px;
+}
+
+.atendimento-cards .card .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: 0.6s;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.atendimento-cards .card .face1 {
+    background-color: var(--color4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.atendimento-cards .card .face1 .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.atendimento-cards .card .face1 img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+}
+
+.atendimento-cards .card .face1 h3 {
+    color: var(--color1);
+    font-size: 1.2em;
+}
+
+.atendimento-cards .card .face2 {
+    background-color: var(--color5);
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+}
+
+.atendimento-cards .card .face2 .content {
+    font-size: 1em;
+    color: var(--color2);
+    text-align: justify;
+}
+
+.atendimento-cards .card:hover .face1 {
+    transform: rotateY(180deg);
+}
+
+.atendimento-cards .card:hover .face2 {
+    transform: rotateY(360deg);
+}
+
+/* --- Seção com partículas animadas --- */
+#particles-section {
+    position: relative;
+    width: 100%;
+    height: 1200px;
+    background-color: var(--color4);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.particles-content {
+    position: relative;
+    z-index: 1;
+    color: var(--color1);
+    text-align: center;
+}
+
+.particles-content h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.particles-content p {
+    font-size: 1.2em;
+    color: var(--color2);
+}
+/* Ajustes nos cards de comida da seção "Vamos conversar" */
+.main {
+  width: 100%;
+  padding: 40px 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.cards {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 0;
+  margin: 0;
+}
+
+.cards_item {
+  width: 900px;
+}
+
+.card {
+  background-color: var(--color4); /* bege */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card_image img {
+  width: 120%;
+  height: 700px; /* imagem reduzida */
+  object-fit: cover;
+}
+
+.card_content {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card_title {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  color: var(--color1);
+}
+
+.card_text {
+  font-size: 0.95em;
+  color: var(--color2);
+  text-align: justify;
+}
+
+.card_text .upcharge {
+  font-style: italic;
+  font-size: 0.9em;
+  margin-top: 20px;
+  color: var(--color1);
+}
+
+.note {
+  font-weight: bold;
+  color: var(--color1);
+}
 
